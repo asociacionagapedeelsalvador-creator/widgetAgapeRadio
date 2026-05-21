@@ -1,0 +1,189 @@
+﻿body{
+  background:#1a1a1a;
+  font-family:Arial, sans-serif;
+  margin:0;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* CONTENEDOR PRINCIPAL */
+.player{
+  width:520px;
+  max-width:95vw;
+  margin:40px auto;
+  background:#2b2b2b;
+  border:3px solid #7CFC00;
+  border-radius:18px;
+  box-shadow:0 0 20px rgba(0,0,0,0.5);
+  padding:14px;
+}
+
+/* HEADER */
+.header{
+  display:flex;
+  align-items:center;
+  color:#fff;
+  gap:12px;
+}
+
+.cover{
+  width:90px;
+  height:90px;
+  background:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin-right:10px;
+  border:2px solid #fff;
+  border-radius:14px;
+  box-shadow: 0 0 18px rgba(0,0,0,0.25);
+  overflow:hidden;
+}
+
+.cover img{
+  width:auto;
+  height:80%;
+  max-width:100%;
+  max-height:100%;
+  object-fit:contain;
+  background:transparent;
+}
+
+.info h3{
+  margin:0;
+  color:#9CFF2E;
+  font-size:16px;
+}
+
+.info p{
+  margin:4px 0;
+  font-size:13px;
+  color:#ccc;
+}
+
+.info small{
+  color:#aaa;
+  font-size:11px;
+}
+
+.footer-copy{
+  margin-top:10px;
+  text-align:right;
+}
+
+.footer-copy small{
+  color:#c2c2c2;
+  font-size:11px;
+  letter-spacing:0.02em;
+}
+
+/* BARRA INFERIOR */
+.controls{
+  margin-top:10px;
+  display:flex;
+  align-items:center;
+  background:#1f1f1f;
+  padding:10px;
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,0.16);
+}
+
+/* ON AIR */
+.status{
+  color:#9CFF2E;
+  font-size:12px;
+  font-weight:bold;
+  margin-right:10px;
+}
+
+.status.error{
+  color:#ff5e5e;
+}
+
+.error-message{
+  margin-top:10px;
+  color:#ff5e5e;
+  font-size:12px;
+  line-height:1.4;
+  letter-spacing:0.01em;
+  text-align:right;
+}
+
+/* VOLUMEN */
+.volume{
+  display:flex;
+  align-items:center;
+  gap:5px;
+  margin-right:auto;
+  color:#ccc;
+}
+
+input[type=range]{
+  width:120px;
+  accent-color:#9CFF2E;
+  background:transparent;
+}
+
+.equalizer{
+  display:flex;
+  align-items:flex-end;
+  gap:4px;
+  margin-right:12px;
+  min-height:24px;
+}
+
+.equalizer span{
+  display:block;
+  width:5px;
+  height:12px;
+  border-radius:999px;
+  background:#9CFF2E;
+  opacity:0.6;
+  animation: equalize 0.8s infinite ease-in-out paused;
+}
+
+.equalizer.active span{
+  animation-play-state:running;
+}
+
+.equalizer span:nth-child(1){ animation-delay: 0s; }
+.equalizer span:nth-child(2){ animation-delay: 0.14s; }
+.equalizer span:nth-child(3){ animation-delay: 0.28s; }
+.equalizer span:nth-child(4){ animation-delay: 0.42s; }
+
+@keyframes equalize{
+  0%,100%{ transform: scaleY(0.5); opacity:0.45; }
+  50%{ transform: scaleY(1.8); opacity:1; }
+}
+
+/* PLAY BUTTON */
+.play-btn{
+  width:60px;
+  height:60px;
+  border-radius:50%;
+  background:#111;
+  border:3px solid #333;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  box-shadow:0 0 10px rgba(0,0,0,0.5);
+  transition:background 0.2s ease, transform 0.15s ease;
+}
+
+.play-btn:hover{
+  background:#000;
+  transform:translateY(-1px);
+}
+
+.play-btn span{
+  font-size:20px;
+  color:#fff;
+  margin-left:3px;
+}
+
+.play-btn.active{
+  border-color:#9CFF2E;
+}

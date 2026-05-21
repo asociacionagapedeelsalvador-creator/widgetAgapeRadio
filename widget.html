@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ágape Radio Player</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div class="player">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="cover">
+      <img src="img/radioagapelogo.png" alt="Ágape Radio Logo">
+    </div>
+
+    <div class="info">
+      <h3>Ágape Radio 90.1 FM</h3>
+      <p>Ágape Radio</p>
+      <small>Streaming en vivo</small>
+    </div>
+  </div>
+
+  <!-- CONTROLES -->
+  <div class="controls">
+
+    <div class="status" id="statusText">ON-AIR</div>
+
+    <div class="volume">
+      🔊
+      <input type="range" min="0" max="1" step="0.01" value="1" id="volume">
+    </div>
+
+    <div class="equalizer" id="equalizer" aria-label="Ecualizador">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <div class="play-btn" id="playBtn">
+      <span id="icon">▶</span>
+    </div>
+
+  </div>
+
+  <div class="error-message" id="errorMessage"></div>
+
+  <div class="footer-copy">
+    <small>© Ágape Radio - Asociación Ágape de El Salvador</small>
+  </div>
+
+</div>
+
+<!-- AUDIO -->
+<audio id="radio" src="https://inventarioti.agape.org.sv/stream"></audio>
+
+<script src="js/player.js" defer></script>
+
+</body>
+</html>
